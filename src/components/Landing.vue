@@ -89,10 +89,12 @@ export default {
   computed: {
     photos() {
       const totalPhotos = this.$store.state.photos;
-      const divider = 2;
-      const newArray = new Array(Math.ceil(totalPhotos.length / divider))
+      const itemsInSubArray = 2;
+      const newArray = new Array(
+        Math.ceil(totalPhotos.length / itemsInSubArray)
+      )
         .fill()
-        .map((_) => totalPhotos.splice(0, divider));
+        .map((_) => totalPhotos.splice(0, itemsInSubArray));
       console.log(newArray);
       return newArray;
     },
