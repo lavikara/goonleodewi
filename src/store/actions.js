@@ -5,8 +5,10 @@ export const getPhotos = ({ commit }) => {
     .getPhotos()
     .then((response) => {
       commit("SET_PHOTOS", response.data);
+      commit("SET_LOADING", false);
     })
     .catch((error) => {
       commit("SET_ERROR", error);
+      commit("SET_LOADING", false);
     });
 };
