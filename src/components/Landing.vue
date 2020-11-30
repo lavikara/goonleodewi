@@ -6,6 +6,7 @@
           type="text"
           placeholder="Search for photo"
           class="search-input"
+          @keypress="checkChar"
           @change="getSearch"
         />
         <img
@@ -46,17 +47,17 @@
               <img
                 :srcset="
                   `
-            ${photo.urls.raw}&w=2560&amp;auto=format&amp;fit=crop&amp;q=80 2560w,
-            ${photo.urls.raw}&w=1600&amp;auto=format&amp;fit=crop&amp;q=80 1600w,
-            ${photo.urls.raw}&w=1536&amp;auto=format&amp;fit=crop&amp;q=80 1536w,
-            ${photo.urls.raw}&w=1440&amp;auto=format&amp;fit=crop&amp;q=80 1440w,
-            ${photo.urls.raw}&w=1366&amp;auto=format&amp;fit=crop&amp;q=80 1366w,
-            ${photo.urls.raw}&w=1280&amp;auto=format&amp;fit=crop&amp;q=80 1280w,
-            ${photo.urls.regular} 1080w,
-            ${photo.urls.raw}&w=1024&amp;auto=format&amp;fit=crop&amp;q=80 1024w,
-            ${photo.urls.raw}&w=768&amp;auto=format&amp;fit=crop&amp;q=80 768w,
-            ${photo.urls.small} 400w
-            `
+                  ${photo.urls.raw}&w=2560&amp;auto=format&amp;fit=crop&amp;q=80 2560w,
+                  ${photo.urls.raw}&w=1600&amp;auto=format&amp;fit=crop&amp;q=80 1600w,
+                  ${photo.urls.raw}&w=1536&amp;auto=format&amp;fit=crop&amp;q=80 1536w,
+                  ${photo.urls.raw}&w=1440&amp;auto=format&amp;fit=crop&amp;q=80 1440w,
+                  ${photo.urls.raw}&w=1366&amp;auto=format&amp;fit=crop&amp;q=80 1366w,
+                  ${photo.urls.raw}&w=1280&amp;auto=format&amp;fit=crop&amp;q=80 1280w,
+                  ${photo.urls.regular} 1080w,
+                  ${photo.urls.raw}&w=1024&amp;auto=format&amp;fit=crop&amp;q=80 1024w,
+                  ${photo.urls.raw}&w=768&amp;auto=format&amp;fit=crop&amp;q=80 768w,
+                  ${photo.urls.small} 400w
+                  `
                 "
                 sizes="(max-width: 600px) 100vw, 33.3vw "
                 :src="`${photo.urls.thumb}`"
@@ -77,17 +78,17 @@
               <img
                 :srcset="
                   `
-            ${photo.urls.raw}&w=2560&amp;auto=format&amp;fit=crop&amp;q=80 2560w,
-            ${photo.urls.raw}&w=1600&amp;auto=format&amp;fit=crop&amp;q=80 1600w,
-            ${photo.urls.raw}&w=1536&amp;auto=format&amp;fit=crop&amp;q=80 1536w,
-            ${photo.urls.raw}&w=1440&amp;auto=format&amp;fit=crop&amp;q=80 1440w,
-            ${photo.urls.raw}&w=1366&amp;auto=format&amp;fit=crop&amp;q=80 1366w,
-            ${photo.urls.raw}&w=1280&amp;auto=format&amp;fit=crop&amp;q=80 1280w,
-            ${photo.urls.regular} 1080w,
-            ${photo.urls.raw}&w=1024&amp;auto=format&amp;fit=crop&amp;q=80 1024w,
-            ${photo.urls.raw}&w=768&amp;auto=format&amp;fit=crop&amp;q=80 768w,
-            ${photo.urls.small} 400w
-            `
+                  ${photo.urls.raw}&w=2560&amp;auto=format&amp;fit=crop&amp;q=80 2560w,
+                  ${photo.urls.raw}&w=1600&amp;auto=format&amp;fit=crop&amp;q=80 1600w,
+                  ${photo.urls.raw}&w=1536&amp;auto=format&amp;fit=crop&amp;q=80 1536w,
+                  ${photo.urls.raw}&w=1440&amp;auto=format&amp;fit=crop&amp;q=80 1440w,
+                  ${photo.urls.raw}&w=1366&amp;auto=format&amp;fit=crop&amp;q=80 1366w,
+                  ${photo.urls.raw}&w=1280&amp;auto=format&amp;fit=crop&amp;q=80 1280w,
+                  ${photo.urls.regular} 1080w,
+                  ${photo.urls.raw}&w=1024&amp;auto=format&amp;fit=crop&amp;q=80 1024w,
+                  ${photo.urls.raw}&w=768&amp;auto=format&amp;fit=crop&amp;q=80 768w,
+                  ${photo.urls.small} 400w
+                  `
                 "
                 sizes="(max-width: 600px) 100vw, 33.3vw "
                 :src="`${photo.urls.thumb}`"
@@ -108,17 +109,17 @@
               <img
                 :srcset="
                   `
-            ${photo.urls.raw}&w=2560&amp;auto=format&amp;fit=crop&amp;q=80 2560w,
-            ${photo.urls.raw}&w=1600&amp;auto=format&amp;fit=crop&amp;q=80 1600w,
-            ${photo.urls.raw}&w=1536&amp;auto=format&amp;fit=crop&amp;q=80 1536w,
-            ${photo.urls.raw}&w=1440&amp;auto=format&amp;fit=crop&amp;q=80 1440w,
-            ${photo.urls.raw}&w=1366&amp;auto=format&amp;fit=crop&amp;q=80 1366w,
-            ${photo.urls.raw}&w=1280&amp;auto=format&amp;fit=crop&amp;q=80 1280w,
-            ${photo.urls.regular} 1080w,
-            ${photo.urls.raw}&w=1024&amp;auto=format&amp;fit=crop&amp;q=80 1024w,
-            ${photo.urls.raw}&w=768&amp;auto=format&amp;fit=crop&amp;q=80 768w,
-            ${photo.urls.small} 400w
-            `
+                  ${photo.urls.raw}&w=2560&amp;auto=format&amp;fit=crop&amp;q=80 2560w,
+                  ${photo.urls.raw}&w=1600&amp;auto=format&amp;fit=crop&amp;q=80 1600w,
+                  ${photo.urls.raw}&w=1536&amp;auto=format&amp;fit=crop&amp;q=80 1536w,
+                  ${photo.urls.raw}&w=1440&amp;auto=format&amp;fit=crop&amp;q=80 1440w,
+                  ${photo.urls.raw}&w=1366&amp;auto=format&amp;fit=crop&amp;q=80 1366w,
+                  ${photo.urls.raw}&w=1280&amp;auto=format&amp;fit=crop&amp;q=80 1280w,
+                  ${photo.urls.regular} 1080w,
+                  ${photo.urls.raw}&w=1024&amp;auto=format&amp;fit=crop&amp;q=80 1024w,
+                  ${photo.urls.raw}&w=768&amp;auto=format&amp;fit=crop&amp;q=80 768w,
+                  ${photo.urls.small} 400w
+                  `
                 "
                 sizes="(max-width: 600px) 100vw, 33.3vw "
                 :src="`${photo.urls.thumb}`"
@@ -137,10 +138,10 @@
 
     <!-- single Image Modal -->
     <div class="modal" ref="modal">
-      <span class="close" @click="closeSinglePictureModal">
-        <img src="../assets/img/close.svg" alt="model image"
-      /></span>
       <div class="inner-modal">
+        <span class="close" @click="closeSinglePictureModal">
+          <img src="../assets/img/close.svg" alt="model image"
+        /></span>
         <img class="modal-img" ref="modalImg" />
         <div class="details-container">
           <h1 class="photographer" ref="photographer"></h1>
@@ -217,6 +218,12 @@ export default {
       setTimeout(() => {
         modal.style.display = "none";
       }, 1000);
+    },
+
+    checkChar() {
+      if (event.code === "Space") {
+        event.preventDefault();
+      }
     },
   },
 };
