@@ -46,6 +46,23 @@
   }
 
   h1 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 2.4rem;
+
+    @media screen and (max-width: 768px) {
+      font-size: 1.8rem;
+    }
+
+    @media screen and (max-width: 600px) {
+      font-size: 1.2rem;
+    }
+
+    @media screen and (max-width: 320px) {
+      font-size: 0.9rem;
+    }
+
     span {
       color: #a6b3c5;
       text-transform: capitalize;
