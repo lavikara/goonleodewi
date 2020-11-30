@@ -1,16 +1,23 @@
 <template>
   <div class="notification">
-    <h1 v-if="this.$store.state.photos.length !== 0">
-      Search Results for <span>"{{ this.$store.state.searchQuery }}"</span>
-    </h1>
-    <h1 v-if="this.$store.state.photos.length === 0">
-      {{ this.$store.state.notification }}
-    </h1>
+    <div v-if="this.$store.state.photos.length !== 0">
+      <h1>
+        Search Results for <span>"{{ this.$store.state.searchQuery }}"</span>
+      </h1>
+    </div>
+    <div v-if="this.$store.state.photos.length === 0">
+      <h1>
+        Search Result for <span>"{{ this.$store.state.searchQuery }}"</span> is
+        empty
+      </h1>
+    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .notification {
+  margin-top: 1rem;
+
   -webkit-animation-name: zoom;
   -webkit-animation-duration: 1s;
   animation-name: zoom;
