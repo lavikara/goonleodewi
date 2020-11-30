@@ -1,13 +1,7 @@
 <template>
   <div id="landing">
     <div class="search-input-container">
-      <Notification
-        v-if="
-          this.$store.state.searchQuery !== 'africa' &&
-            this.$store.state.photos.length !== 0
-        "
-      />
-      <div class="input-container" v-else>
+      <div class="input-container">
         <input
           type="text"
           placeholder="Search for photo"
@@ -20,21 +14,38 @@
           class="search-icon"
         />
       </div>
+      <Notification
+        v-if="
+          this.$store.state.searchQuery !== 'africa' &&
+            this.$store.state.photos.length !== 0
+        "
+      />
     </div>
-    <Notification
-      v-if="this.$store.state.photos.length === 0 && !this.$store.state.loading"
-    />
-    <div class="image-container container" v-else>
-      <div class="photo-colunm">
-        <div class="placeholder" v-if="this.$store.state.loading">
-          <Placeholder v-for="i in 3" :key="i" />
-        </div>
-        <div v-else>
-          <div v-for="photo in photos[0]" :key="photo.id" class="photo">
-            <div class="overlay" @click="openSinglePictureModal()"></div>
-            <img
-              :srcset="
-                `
+    <div class="placeholder container" v-if="this.$store.state.loading">
+      <div>
+        <ContentLoader v-for="i in 3" :key="i" />
+      </div>
+      <div>
+        <ContentLoader v-for="i in 3" :key="i" />
+      </div>
+      <div>
+        <ContentLoader v-for="i in 3" :key="i" />
+      </div>
+    </div>
+    <div class=" image-div container" v-else>
+      <Notification
+        v-if="
+          this.$store.state.photos.length === 0 && !this.$store.state.loading
+        "
+      />
+      <div class="image-container">
+        <div class="photo-colunm">
+          <div>
+            <div v-for="photo in photos[0]" :key="photo.id" class="photo">
+              <div class="overlay" @click="openSinglePictureModal()"></div>
+              <img
+                :srcset="
+                  `
             ${photo.urls.raw}&w=2560&amp;auto=format&amp;fit=crop&amp;q=80 2560w,
             ${photo.urls.raw}&w=1600&amp;auto=format&amp;fit=crop&amp;q=80 1600w,
             ${photo.urls.raw}&w=1536&amp;auto=format&amp;fit=crop&amp;q=80 1536w,
@@ -46,29 +57,26 @@
             ${photo.urls.raw}&w=768&amp;auto=format&amp;fit=crop&amp;q=80 768w,
             ${photo.urls.small} 400w
             `
-              "
-              sizes="(max-width: 600px) 100vw, 33.3vw "
-              :src="`${photo.urls.thumb}`"
-              loading="lazy"
-              alt="unsplash image"
-            />
-            <div class="details-container">
-              <h1>{{ photo.user.first_name }} {{ photo.user.last_name }}</h1>
-              <p>{{ photo.user.location }}</p>
+                "
+                sizes="(max-width: 600px) 100vw, 33.3vw "
+                :src="`${photo.urls.thumb}`"
+                loading="lazy"
+                alt="unsplash image"
+              />
+              <div class="details-container">
+                <h1>{{ photo.user.first_name }} {{ photo.user.last_name }}</h1>
+                <p>{{ photo.user.location }}</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="photo-colunm">
-        <div class="placeholder" v-if="this.$store.state.loading">
-          <Placeholder v-for="i in 3" :key="i" />
-        </div>
-        <div v-else>
-          <div v-for="photo in photos[1]" :key="photo.id" class="photo">
-            <div class="overlay" @click="openSinglePictureModal()"></div>
-            <img
-              :srcset="
-                `
+        <div class="photo-colunm">
+          <div>
+            <div v-for="photo in photos[1]" :key="photo.id" class="photo">
+              <div class="overlay" @click="openSinglePictureModal()"></div>
+              <img
+                :srcset="
+                  `
             ${photo.urls.raw}&w=2560&amp;auto=format&amp;fit=crop&amp;q=80 2560w,
             ${photo.urls.raw}&w=1600&amp;auto=format&amp;fit=crop&amp;q=80 1600w,
             ${photo.urls.raw}&w=1536&amp;auto=format&amp;fit=crop&amp;q=80 1536w,
@@ -80,29 +88,26 @@
             ${photo.urls.raw}&w=768&amp;auto=format&amp;fit=crop&amp;q=80 768w,
             ${photo.urls.small} 400w
             `
-              "
-              sizes="(max-width: 600px) 100vw, 33.3vw "
-              :src="`${photo.urls.thumb}`"
-              loading="lazy"
-              alt="unsplash image"
-            />
-            <div class="details-container">
-              <h1>{{ photo.user.first_name }} {{ photo.user.last_name }}</h1>
-              <p>{{ photo.user.location }}</p>
+                "
+                sizes="(max-width: 600px) 100vw, 33.3vw "
+                :src="`${photo.urls.thumb}`"
+                loading="lazy"
+                alt="unsplash image"
+              />
+              <div class="details-container">
+                <h1>{{ photo.user.first_name }} {{ photo.user.last_name }}</h1>
+                <p>{{ photo.user.location }}</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="photo-colunm">
-        <div class="placeholder" v-if="this.$store.state.loading">
-          <Placeholder v-for="i in 3" :key="i" />
-        </div>
-        <div v-else>
-          <div v-for="photo in photos[2]" :key="photo.id" class="photo">
-            <div class="overlay" @click="openSinglePictureModal()"></div>
-            <img
-              :srcset="
-                `
+        <div class="photo-colunm">
+          <div>
+            <div v-for="photo in photos[2]" :key="photo.id" class="photo">
+              <div class="overlay" @click="openSinglePictureModal()"></div>
+              <img
+                :srcset="
+                  `
             ${photo.urls.raw}&w=2560&amp;auto=format&amp;fit=crop&amp;q=80 2560w,
             ${photo.urls.raw}&w=1600&amp;auto=format&amp;fit=crop&amp;q=80 1600w,
             ${photo.urls.raw}&w=1536&amp;auto=format&amp;fit=crop&amp;q=80 1536w,
@@ -114,15 +119,16 @@
             ${photo.urls.raw}&w=768&amp;auto=format&amp;fit=crop&amp;q=80 768w,
             ${photo.urls.small} 400w
             `
-              "
-              sizes="(max-width: 600px) 100vw, 33.3vw "
-              :src="`${photo.urls.thumb}`"
-              loading="lazy"
-              alt="unsplash image"
-            />
-            <div class="details-container">
-              <h1>{{ photo.user.first_name }} {{ photo.user.last_name }}</h1>
-              <p>{{ photo.user.location }}</p>
+                "
+                sizes="(max-width: 600px) 100vw, 33.3vw "
+                :src="`${photo.urls.thumb}`"
+                loading="lazy"
+                alt="unsplash image"
+              />
+              <div class="details-container">
+                <h1>{{ photo.user.first_name }} {{ photo.user.last_name }}</h1>
+                <p>{{ photo.user.location }}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -146,14 +152,14 @@
 </template>
 
 <script>
-import Placeholder from "./Placeholder";
+import ContentLoader from "./ContentLoader";
 import Notification from "./Notification";
 
 export default {
   name: "Landing",
 
   components: {
-    Placeholder,
+    ContentLoader,
     Notification,
   },
 
@@ -173,6 +179,7 @@ export default {
 
   methods: {
     getSearch() {
+      this.$store.dispatch("resetLoading", true);
       this.$store.dispatch("resetPhotos");
       let query = "";
       switch (event.target.value) {
@@ -185,6 +192,7 @@ export default {
           break;
       }
       this.$store.dispatch("getPhotos", query);
+      event.target.value = "";
     },
 
     openSinglePictureModal() {
