@@ -5,10 +5,17 @@
         Search Results for <span>"{{ this.$store.state.searchQuery }}"</span>
       </h1>
     </div>
-    <div v-if="this.$store.state.photos.length === 0">
+    <div
+      v-if="this.$store.state.photos.length === 0 && !this.$store.state.loading"
+    >
       <h1>
         Search Result for <span>"{{ this.$store.state.searchQuery }}"</span> is
         empty
+      </h1>
+    </div>
+    <div v-if="this.$store.state.loading">
+      <h1>
+        Searching for <span>"{{ this.$store.state.searchQuery }}"</span>
       </h1>
     </div>
   </div>

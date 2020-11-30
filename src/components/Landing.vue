@@ -1,7 +1,7 @@
 <template>
   <div id="landing">
     <div class="search-input-container">
-      <div class="input-container">
+      <div class="input-container" v-if="!this.$store.state.loading">
         <input
           type="text"
           placeholder="Search for photo"
@@ -15,6 +15,7 @@
           class="search-icon"
         />
       </div>
+      <Notification v-if="this.$store.state.loading" />
       <Notification
         v-if="
           this.$store.state.searchQuery !== 'africa' &&
