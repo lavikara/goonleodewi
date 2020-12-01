@@ -1,5 +1,5 @@
 <template>
-  <div class="notification">
+  <div class="notification" v-if="this.$store.state.initialQuery === ''">
     <div v-if="this.$store.state.photos.length !== 0">
       <h1>
         Search Results for <span>"{{ this.$store.state.searchQuery }}"</span>
