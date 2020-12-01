@@ -1,14 +1,19 @@
+:root {
+  --primaryFont: "Avenir", Helvetica, Arial, sans-serif;
+  --cyanBlue: #2c3e50;
+  --lightAshColor: #dde2e9;
+  --whiteColor: #ffffff;
+  --overLay: rgba(0, 0, 0, 0.4);
+}
+
 body {
   margin: 0;
   padding: 0;
-}
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: var(--primaryFont);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: var(--cyanBlue);
 }
 
 .container {
@@ -26,12 +31,7 @@ input {
   border: none;
 }
 
-ul,
-li,
 h1,
-h2,
-h3,
-h4,
 p,
 span {
   margin: 0;
