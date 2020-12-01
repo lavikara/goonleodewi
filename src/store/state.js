@@ -1,6 +1,7 @@
 export default {
   photos: [],
   loading: true,
-  searchQuery: "africa",
+  searchQuery: "",
+  initialQuery: "africa",
   error: [],
 };
