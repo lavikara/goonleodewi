@@ -1,9 +1,9 @@
 export const SET_PHOTOS = (state, photos) => {
   let itemsInSubArray = 0;
-  if (photos.length <= 6) {
-    itemsInSubArray = 2;
-  } else if (photos.length <= 3) {
+  if (photos.length <= 3) {
     itemsInSubArray = 1;
+  } else if (photos.length <= 6) {
+    itemsInSubArray = 2;
   } else {
     itemsInSubArray = 3;
   }
