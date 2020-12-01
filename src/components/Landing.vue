@@ -44,15 +44,19 @@
                 :srcset="
                   `
                   ${photo.urls.raw}&w=2560&amp;auto=format&amp;fit=crop&amp;q=80 2560w,
+                  ${photo.urls.raw}&w=1800&amp;auto=format&amp;fit=crop&amp;q=80 1800w,
                   ${photo.urls.raw}&w=1600&amp;auto=format&amp;fit=crop&amp;q=80 1600w,
                   ${photo.urls.raw}&w=1536&amp;auto=format&amp;fit=crop&amp;q=80 1536w,
                   ${photo.urls.raw}&w=1440&amp;auto=format&amp;fit=crop&amp;q=80 1440w,
                   ${photo.urls.raw}&w=1366&amp;auto=format&amp;fit=crop&amp;q=80 1366w,
                   ${photo.urls.raw}&w=1280&amp;auto=format&amp;fit=crop&amp;q=80 1280w,
-                  ${photo.urls.regular} 1080w,
+                  ${photo.urls.raw}&w=1080&amp;auto=format&amp;fit=crop&amp;q=80 1080w,
                   ${photo.urls.raw}&w=1024&amp;auto=format&amp;fit=crop&amp;q=80 1024w,
                   ${photo.urls.raw}&w=768&amp;auto=format&amp;fit=crop&amp;q=80 768w,
-                  ${photo.urls.small} 400w
+                  ${photo.urls.raw}&w=600&amp;auto=format&amp;fit=crop&amp;q=80 600w,
+                  ${photo.urls.raw}&w=500&amp;auto=format&amp;fit=crop&amp;q=80 500w,
+                  ${photo.urls.raw}&w=400&amp;auto=format&amp;fit=crop&amp;q=80 400w,
+                  ${photo.urls.raw}&w=300&amp;auto=format&amp;fit=crop&amp;q=80 300w,
                   `
                 "
                 sizes="(max-width: 600px) 100vw, 33.3vw "
@@ -75,15 +79,19 @@
                 :srcset="
                   `
                   ${photo.urls.raw}&w=2560&amp;auto=format&amp;fit=crop&amp;q=80 2560w,
+                  ${photo.urls.raw}&w=1800&amp;auto=format&amp;fit=crop&amp;q=80 1800w,
                   ${photo.urls.raw}&w=1600&amp;auto=format&amp;fit=crop&amp;q=80 1600w,
                   ${photo.urls.raw}&w=1536&amp;auto=format&amp;fit=crop&amp;q=80 1536w,
                   ${photo.urls.raw}&w=1440&amp;auto=format&amp;fit=crop&amp;q=80 1440w,
                   ${photo.urls.raw}&w=1366&amp;auto=format&amp;fit=crop&amp;q=80 1366w,
                   ${photo.urls.raw}&w=1280&amp;auto=format&amp;fit=crop&amp;q=80 1280w,
-                  ${photo.urls.regular} 1080w,
+                  ${photo.urls.raw}&w=1080&amp;auto=format&amp;fit=crop&amp;q=80 1080w,
                   ${photo.urls.raw}&w=1024&amp;auto=format&amp;fit=crop&amp;q=80 1024w,
                   ${photo.urls.raw}&w=768&amp;auto=format&amp;fit=crop&amp;q=80 768w,
-                  ${photo.urls.small} 400w
+                  ${photo.urls.raw}&w=600&amp;auto=format&amp;fit=crop&amp;q=80 600w,
+                  ${photo.urls.raw}&w=500&amp;auto=format&amp;fit=crop&amp;q=80 500w,
+                  ${photo.urls.raw}&w=400&amp;auto=format&amp;fit=crop&amp;q=80 400w,
+                  ${photo.urls.raw}&w=300&amp;auto=format&amp;fit=crop&amp;q=80 300w,
                   `
                 "
                 sizes="(max-width: 600px) 100vw, 33.3vw "
@@ -106,15 +114,19 @@
                 :srcset="
                   `
                   ${photo.urls.raw}&w=2560&amp;auto=format&amp;fit=crop&amp;q=80 2560w,
+                  ${photo.urls.raw}&w=1800&amp;auto=format&amp;fit=crop&amp;q=80 1800w,
                   ${photo.urls.raw}&w=1600&amp;auto=format&amp;fit=crop&amp;q=80 1600w,
                   ${photo.urls.raw}&w=1536&amp;auto=format&amp;fit=crop&amp;q=80 1536w,
                   ${photo.urls.raw}&w=1440&amp;auto=format&amp;fit=crop&amp;q=80 1440w,
                   ${photo.urls.raw}&w=1366&amp;auto=format&amp;fit=crop&amp;q=80 1366w,
                   ${photo.urls.raw}&w=1280&amp;auto=format&amp;fit=crop&amp;q=80 1280w,
-                  ${photo.urls.regular} 1080w,
+                  ${photo.urls.raw}&w=1080&amp;auto=format&amp;fit=crop&amp;q=80 1080w,
                   ${photo.urls.raw}&w=1024&amp;auto=format&amp;fit=crop&amp;q=80 1024w,
                   ${photo.urls.raw}&w=768&amp;auto=format&amp;fit=crop&amp;q=80 768w,
-                  ${photo.urls.small} 400w
+                  ${photo.urls.raw}&w=600&amp;auto=format&amp;fit=crop&amp;q=80 600w,
+                  ${photo.urls.raw}&w=500&amp;auto=format&amp;fit=crop&amp;q=80 500w,
+                  ${photo.urls.raw}&w=400&amp;auto=format&amp;fit=crop&amp;q=80 400w,
+                  ${photo.urls.raw}&w=300&amp;auto=format&amp;fit=crop&amp;q=80 300w,
                   `
                 "
                 sizes="(max-width: 600px) 100vw, 33.3vw "
