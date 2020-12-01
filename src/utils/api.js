@@ -6,8 +6,8 @@ const SEARCH_URL = `${BASE_URL}/search/photos`;
 
 export default {
   getPhotos: (query) => {
-    return axios.get(
-      `${SEARCH_URL}/?query=${query}&per_page=8&page=1&client_id=${KEY}`
-    );
+    return axios.get(`${SEARCH_URL}/?query=${query}&per_page=8&page=1`, {
+      headers: { Authorization: `Client-ID ${KEY}` },
+    });
   },
 };
