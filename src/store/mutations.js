@@ -28,3 +28,7 @@ export const SET_SEARCHQUERY = (state, query) => {
 export const RESET_PHOTOS = (state) => {
   state.photos = [];
 };
+
+export const RESET_INITIALQUERY = (state) => {
+  state.initialQuery = "";
+};
