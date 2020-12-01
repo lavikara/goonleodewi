@@ -1,4 +1,8 @@
-# cowrywise
+# goonleodewi
+
+A frontend challenge to create an unsplash clone :tada: :white_check_mark:
+
+[Click to view](https://goonleodewi.netlify.app/ "Unsplash clone")
 
 ## Project setup
 ```
