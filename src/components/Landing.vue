@@ -16,12 +16,7 @@
         />
       </div>
       <Notification v-if="this.$store.state.loading" />
-      <Notification
-        v-if="
-          this.$store.state.searchQuery !== 'africa' &&
-            this.$store.state.photos.length !== 0
-        "
-      />
+      <Notification v-if="this.$store.state.photos.length !== 0" />
     </div>
     <div class="placeholder container" v-if="this.$store.state.loading">
       <div>
@@ -170,7 +165,7 @@ export default {
   },
 
   created() {
-    this.$store.dispatch("getPhotos", this.$store.state.searchQuery);
+    this.$store.dispatch("getPhotos", this.$store.state.initialQuery);
   },
 
   computed: {
@@ -195,6 +190,11 @@ export default {
       }
       this.$store.dispatch("getPhotos", query);
       event.target.value = "";
+      if (this.$store.state.initialQuery === "") {
+        return;
+      } else {
+        this.$store.dispatch("initialQuery");
+      }
     },
 
     openSinglePictureModal() {
