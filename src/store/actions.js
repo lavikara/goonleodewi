@@ -21,3 +21,7 @@ export const resetPhotos = ({ commit }) => {
 export const resetLoading = ({ commit }, loading) => {
   commit("SET_LOADING", loading);
 };
+
+export const initialQuery = ({ commit }) => {
+  commit("RESET_INITIALQUERY");
+};
