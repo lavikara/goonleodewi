@@ -5,7 +5,7 @@ export const SET_PHOTOS = (state, photos) => {
   } else if (photos.length <= 6) {
     itemsInSubArray = 2;
   } else {
-    itemsInSubArray = 3;
+    itemsInSubArray = Math.ceil(photos.length / 3);
   }
   const newArray = new Array(Math.ceil(photos.length / itemsInSubArray))
     .fill()
