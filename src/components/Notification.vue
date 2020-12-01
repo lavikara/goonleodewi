@@ -2,20 +2,20 @@
   <div class="notification" v-if="this.$store.state.initialQuery === ''">
     <div v-if="this.$store.state.photos.length !== 0">
       <h1>
-        Search Results for <span>"{{ this.$store.state.searchQuery }}"</span>
+        Search Results for<span>"{{ this.$store.state.searchQuery }}"</span>
       </h1>
     </div>
     <div
       v-if="this.$store.state.photos.length === 0 && !this.$store.state.loading"
     >
       <h1>
-        Search Result for <span>"{{ this.$store.state.searchQuery }}"</span> is
-        empty
+        Search Result for
+        <span>"{{ this.$store.state.searchQuery }}"</span>is empty
       </h1>
     </div>
     <div v-if="this.$store.state.loading">
       <h1>
-        Searching for <span>"{{ this.$store.state.searchQuery }}"</span>
+        Searching for<span>"{{ this.$store.state.searchQuery }}"</span>
       </h1>
     </div>
   </div>
@@ -24,6 +24,10 @@
 <style lang="scss" scoped>
 .notification {
   margin-top: 1rem;
+
+  @media screen and (max-width: 600px) {
+    margin-top: 1.5rem;
+  }
 
   -webkit-animation-name: zoom;
   -webkit-animation-duration: 1s;
@@ -59,20 +63,21 @@
     font-size: 2.4rem;
 
     @media screen and (max-width: 768px) {
-      font-size: 1.8rem;
+      font-size: 2rem;
     }
 
     @media screen and (max-width: 600px) {
-      font-size: 1.2rem;
+      font-size: 1.6rem;
     }
 
     @media screen and (max-width: 320px) {
-      font-size: 0.9rem;
+      font-size: 1.2rem;
     }
 
     span {
       color: #a6b3c5;
       text-transform: capitalize;
+      margin: 0 0.6rem;
     }
   }
 }
