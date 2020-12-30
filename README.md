@@ -1,6 +1,8 @@
 # goonleodewi
 
-A frontend challenge to create an unsplash clone :tada: :white_check_mark:
+A frontend app to create an unsplash clone :tada: :white_check_mark:
+
+The app is built with vue and hosted on netlify
 
 [Click to view](https://goonleodewi.netlify.app/ "Unsplash clone")
 
